@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid State Checker</title>
+    <link href="app.css" rel="stylesheet" type="text/css"></link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
+    type="text/css"></link> 
+
+</head>
+<body>
+    <header>
+        <h1>State Covid Status Checker</h1>
+    </header>
+    
+    <main>
+        <section id="intro">
+            <p>Welcome! With the COVID-19 pandemic impacting everyone's lives I thought it would be nice to have a quick way to reference your state's statistics and to
+                stay informed about the changes going on. Below you can select your state, as well as specific statistics that you wish to look at. Keep in consideration
+                the population of each state when looking at statistics. 
+            </p>
+        </section>
+        <form id="covid-form">
+            <label for="state">Select a State:</label>
+            <select id="state" name="state"
+            <input type="submit" value="Get stats!">
+        </form>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
