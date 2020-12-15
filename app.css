@@ -30,3 +30,6 @@ body{
 .state-form{
     max-width: 40px;
 }
+.state-form{
+    text-transform: lowercase;
+}
