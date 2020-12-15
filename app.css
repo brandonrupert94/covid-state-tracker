@@ -9,4 +9,24 @@ header{
     margin-left: auto;
     margin-right: auto;
     margin-top: 24px;    
+    background-color: wheat;
+}
+h2 {
+    text-align:center;
+}
+p {
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+body{
+    background-color: wheat;
+}
+#covid-form{
+    justify-items: center;
+    text-align: center
+}
+.state-form{
+    max-width: 40px;
 }
