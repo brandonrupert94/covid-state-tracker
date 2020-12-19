@@ -18,17 +18,21 @@
         <section id="intro">
             <h2>A quick note:</h2>
             <p>With the COVID-19 pandemic impacting everyone's lives I thought it would be nice to have a quick way to reference your state's statistics and to
-                stay informed about the changes going on. Below you can select your state, as well as specific statistics that you wish to look at. Keep in consideration
-                the population of each state when looking at statistics. 
+                stay informed about the changes going on. Below you can select between three forms. They let you choose between Indiviual State Covid statistics, 
+                Global Covid statistics, and a Compare states statistic. 
             </p>
         </section>
-        <form id="covid-form">
-            <label for="state">Select a State:</label>
-            <input type="text" id="state" class="state-form" value="" maxlength="2" required>
-            <input type="submit" value="Get stats!">
-        </form>
-        <div id="results-container" class="results">
+        <section id="form-buttons">
+            <form id="button">
+                <input type="button" id="js-state" class="btn" value="State Statistics">
+                <input type="button" id="js-global" class="btn" value="Global Statistics">
+                <input type="button" id="js-compare" class="btn" value="Compare States">
+            </form>
+        </section>
+        <div id="form-container">
 
+        </div>
+        <div id="results-container" class="results error-message">
         </div>
     </main>
 
