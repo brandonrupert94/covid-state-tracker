@@ -9,18 +9,19 @@ const baseUrl= "https://api.covidtracking.com/v1/states/"
 
 
 function globalStats(){
-    let url=`https://api.covidtracking.com/v1/us/current.json`
+    let url='https://api.covidtracking.com/v1/us/current.json'
 
 
 
 
-        fetch(url)
+         fetch(url)
             .then(response =>{
                 if (response.ok){
                     return response.json();
                 } throw new Error(response.status)
             })
             .then(responseJson => displayGlobalResults(responseJson))
+            .then(responseJson => console.log(responseJson))
             .catch(err => {
                 $('.error-message').show();
                 });
@@ -33,7 +34,7 @@ function globalStats(){
 function stateFormHtml(){
     let formHtml= `<form id="covid-form">
     <label for="state">Select a State:</label>
-    <input type="text" id="state" class="state-form" value="" maxlength="2" required>
+    <input type="text" id="state" class="state-form" value="" placeholder="IL" maxlength="2" required>
     <input type="submit" value="Get stats!">
 </form>
 `;
@@ -43,7 +44,6 @@ function stateFormHtml(){
  $('#form-container').append(formHtml);
 
 }
-
 
 
 
@@ -74,22 +74,23 @@ function displayGlobalResults(responseJson){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function displayStateResults(responseJson){
+    $('#form-container').empty();
+    $('#results-container').empty();
+    let resultHtml = `<div>
+    <ul>
+        <li>Positive Cases: ${responseJson["positive"]}</li>
+        <li>Negative Cases: ${responseJson["negative"]}</li>
+        <li>Cases Pending: ${responseJson["pending"]}</li>
+        <li>Deaths: ${responseJson["death"]}</li>
+        <li>Currently Hospitalized: ${responseJson["hospitalizedCurrently"]}</li>
+        <li>Total Hospitalized: ${responseJson["hospitalizedCumulative"]}</li>
+    </ul>
+    
+    </div>`;
+    console.log('displayStateResults ran');
+    $('#results-container').append(resultHtml);
+}
 
 
 
@@ -97,7 +98,7 @@ function displayGlobalResults(responseJson){
 
 
 //this function creates the url for a fetch command for what state will display results
-/*function createUrl(){
+function createUrl(){
     let stateSelected = document.getElementById('state').value;
     let fullUrl= `${baseUrl}${stateSelected}/current.json`;
     fullUrl.toLowerCase();
@@ -109,7 +110,7 @@ function displayGlobalResults(responseJson){
                    return response.json();
                 } throw new Error(response.status);
             })
-            .then(responseJson => displayResults(responseJson))
+            .then(responseJson => displayStateResults(responseJson))
             .then(responseJson => console.log(responseJson))
             .catch(err => {
                 $('.error-message').show();
@@ -130,7 +131,7 @@ function handleGetStats(){
 
 }
 
-$(handleGetStats());*/
+$(handleGetStats())
 function handleGetForm(){
     $('#js-state').on('click', event =>{
         event.preventDefault();
@@ -140,6 +141,7 @@ function handleGetForm(){
         event.preventDefault();
         globalStats();
     })
+    
 }
 
 $(handleGetForm());

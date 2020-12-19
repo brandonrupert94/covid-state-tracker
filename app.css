@@ -20,6 +20,7 @@ p {
     padding-right: 8px;
 }
 
+
 body{
     background-color: wheat;
 }
@@ -44,9 +45,21 @@ body{
     margin-top: 20px;
     padding-bottom: 10px;
 }
+ul{
+    list-style-type: none;
+   
+
+}
 input{
     margin-bottom: 10px;
 }
 .btn{
     margin-bottom:10px;
+}
+#results-container{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
 }
