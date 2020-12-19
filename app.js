@@ -8,7 +8,24 @@ const baseUrl= "https://api.covidtracking.com/v1/states/"
 
 
 
+function globalStats(){
+    let url=`https://api.covidtracking.com/v1/us/current.json`
 
+
+
+
+        fetch(url)
+            .then(response =>{
+                if (response.ok){
+                    return response.json();
+                } throw new Error(response.status)
+            })
+            .then(responseJson => displayGlobalResults(responseJson))
+            .catch(err => {
+                $('.error-message').show();
+                });
+
+}
 
 
 
@@ -19,8 +36,9 @@ function stateFormHtml(){
     <input type="text" id="state" class="state-form" value="" maxlength="2" required>
     <input type="submit" value="Get stats!">
 </form>
-<div id="results-container" class="results">`;
+`;
  $('#form-container').empty();
+ $('#results-container').empty();
 
  $('#form-container').append(formHtml);
 
@@ -33,15 +51,19 @@ function stateFormHtml(){
 
 
 //displays results based off of fetch response
-function displayResults(responseJson){
+function displayGlobalResults(responseJson){
+    $('#form-container').empty();
+    $('#results-container').empty();
     
     let resultHtml=`<div>
      <ul>
-        <li>
-        ${responseJson["state"]}
-        ${responseJson["positive"]}
-        ${responseJson["pending"]}
-        </li>     
+        <li>Positive Cases: ${responseJson["positive"]}</li>
+        <li>Negative Cases: ${responseJson["negative"]}</li>
+        <li>Cases Pending: ${responseJson["pending"]}</li>
+        <li>Deaths: ${responseJson["death"]}</li>
+        <li>Currently Hospitalized: ${responseJson["hospitalizedCurrently"]}</li>
+        <li>Total Hospitalized: ${responseJson["hospitalizedCumulative"]}</li>
+
      </ul>
 
     </div>`;
@@ -113,6 +135,10 @@ function handleGetForm(){
     $('#js-state').on('click', event =>{
         event.preventDefault();
         stateFormHtml();
+    })
+    $('#js-global').on('click', event =>{
+        event.preventDefault();
+        globalStats();
     })
 }
 
