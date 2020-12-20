@@ -68,3 +68,11 @@ input{
 .centered{
     text-align: center;
 }
+p{
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+a:link{color:blue };
+a:hover{color:darkmagenta};
+a:visited{color:darkslateblue};
+a:active{color:darkturquoise};
