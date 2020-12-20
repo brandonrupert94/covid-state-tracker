@@ -29,8 +29,10 @@ function displayVideos(responseJson){
 
     $('#youtube-video').append(`<div class="video">
      <h3>${responseJson['items'][i]['snippet']["title"]}</h3>
-     <p>Description: ${videoDescription}</p>
-     <p>Video Link:<a href="${videoUrl}">${videoUrl}</a></p>
+        <ol>
+            <li><p>Description: ${videoDescription}</p></li>
+            <li><p>Video Link:<a href="${videoUrl}">${videoUrl}</a></p></li>
+        </ol>
      </div>`);
   };
  
@@ -46,9 +48,11 @@ function displayResults(responseJson){
     let resultHtml=`<div>
      <ul>
         <li>Positive Cases: ${responseJson["positive"]}</li>
+        <li>increase from previous day: ${responseJson["positiveIncrease"]}</li>
         <li>Negative Cases: ${responseJson["negative"]}</li>
         
         <li>Deaths: ${responseJson["death"]}</li>
+        <li>Death increase from previous day: ${responseJson["deathIncrease"]}</li>
         <li>Currently Hospitalized: ${responseJson["hospitalizedCurrently"]}</li>
         
 

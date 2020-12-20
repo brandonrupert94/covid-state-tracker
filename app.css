@@ -15,7 +15,7 @@ h2 {
     text-align:center;
 }
 p {
-    text-align: center;
+    text-align: left;
     padding-left: 8px;
     padding-right: 8px;
 }
@@ -61,6 +61,7 @@ input{
     text-align: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
+    line-height: 60px;
 }
 .error-message{
     display:none;
@@ -76,3 +77,27 @@ a:link{color:blue };
 a:hover{color:darkmagenta};
 a:visited{color:darkslateblue};
 a:active{color:darkturquoise};
+
+@media all and (min-width: 800px){
+    #form-button{
+        display: flex;
+        flex-direction: row;
+    }
+    .btn{
+        display: flex;
+        flex-direction: row;
+    }
+    header{
+        text-decoration: underline;
+        text-align: center;
+        font-size: larger;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        border: 1px solid teal;
+        border-radius: 5px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;    
+        background-color: wheat;
+    }
+}
