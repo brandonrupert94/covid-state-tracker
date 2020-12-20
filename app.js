@@ -18,25 +18,28 @@ function stateFormHtml(){
  $('#form-container').append(formHtml);
 
 }
+//this function is called when the Youtube Covid Safety button submits a fetch request and uses the data to display results
 function displayVideos(responseJson){
  $('#results-container').empty();
    ;
 
   for (let i=0; i < responseJson['items'].length; i++){
     let videoUrl= `https://www.youtube.com/watch?v=${responseJson['items'][i]['id']['videoId']}`;
+    let videoDescription= `${responseJson['items'][i]['snippet']['description']}`;
 
-    $('#results-container').append(`<div class="video">
-     <p>${responseJson['items'][i]['snippet']["title"]}</p>
-     <a href="${videoUrl}">${videoUrl}</a>
+    $('#youtube-video').append(`<div class="video">
+     <h3>${responseJson['items'][i]['snippet']["title"]}</h3>
+     <p>Description: ${videoDescription}</p>
+     <p>Video Link:<a href="${videoUrl}">${videoUrl}</a></p>
      </div>`);
   };
  
   console.log('ddisplayVideos ran')
 };
 
-//displays results based off of fetch response
+//displays results based off of fetch response to the state covid stat tracker form
 function displayResults(responseJson){
-    
+   
     $('#results-container').empty();
     
     
@@ -87,6 +90,8 @@ function handleGetStats(){
     })
 }
 
+//this function is the fetch for the youtube api to get the response data and pass it through the displayVideos function
+
 function getYoutubeVideos(){
     $('.error-message').hide();
     let url=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=covid%20safety&key=${apiKey}`
@@ -103,14 +108,17 @@ function getYoutubeVideos(){
         });
     console.log('getYTVideos ran');
 }
-//This function listens to the user selecting to show global stats or to pull up an additional form to select a state
+//This function listens to the user selecting to show state stats or to pull up a list of covid safety youtube videos
 function handleGetForm(){
     $('#js-state').on('click', event =>{
         event.preventDefault();
+        $('#youtube-video').empty();
         stateFormHtml();
     })
     $('#js-youtube').on('click', event =>{
         event.preventDefault();
+        $('#form-container').empty();
+        $('#results-container').empty();
         getYoutubeVideos();
     })
 }
