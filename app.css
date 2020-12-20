@@ -20,7 +20,6 @@ p {
     padding-right: 8px;
 }
 
-
 body{
     background-color: wheat;
 }
@@ -62,4 +61,7 @@ input{
     text-align: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
+}
+.error-message{
+    display:none;
 }
