@@ -42,7 +42,7 @@ body{
     margin-right:auto;
     margin-bottom: 20px;
     margin-top: 20px;
-    padding-bottom: 10px;
+    
 }
 ul{
     list-style-type: none;
@@ -64,4 +64,7 @@ input{
 }
 .error-message{
     display:none;
+}
+.centered{
+    text-align: center;
 }

@@ -3,29 +3,33 @@
 const baseUrl= "https://api.covidtracking.com/v1/states/"
 
 
-const apiKeyYT= "AIzaSyDPLbIT5mkBx1vlDjD101H3w4rAv31Cfz4"
 
 
 
-//this function returns global stats
-function globalStats(){
+
+//this function returns the compare form
+function compareStats(){
     
-    let url='https://api.covidtracking.com/v1/us/current.json'
+    let formHtml= `<div id="state-one" class="compare">
+        <form id="covid-form">
+            <label for="state-one">Select 1st State:</label>
+            <input type="text" id="state-one" class="state-form" value="" placeholder="il" maxlength="2" required>
+        </form>
+     
+    </div>
+    <div id="state-two" class="compare">
+        <form id="covid-form">
+            <label for="state-two">Select 2nd State:</label>
+            <input type="text" id="state-two" class="state-form" value="" placeholder="ca" maxlength="2" required>
+        </form>    
+    </div>
+    <div id="compare">
+        <input type="submit" id="button" value="Compare">
+        </div>`;
 
-
-
-
-         fetch(url)
-            .then(response =>{
-                if (response.ok){
-                    return response.json();
-                } throw new Error(response.message)
-            })
-            .then(responseJson => displayGlobalResults(responseJson))
-            .catch(err => {
-                $('.error-message').show();
-                });
-
+    $('#form-container').empty();
+    $('#results-container').empty();
+    $('#form-container').append(formHtml);
 }
 
 
@@ -52,8 +56,8 @@ function stateFormHtml(){
 
 
 //displays results based off of fetch response
-function displayGlobalResults(responseJson){
-    $('#form-container').empty();
+function displayResults(responseJson){
+    
     $('#results-container').empty();
     
     
@@ -74,27 +78,6 @@ function displayGlobalResults(responseJson){
 };
 
 
-//this function is called when a correct state is submitted and replaces prior results with most recent search results. 
-
-function displayStateResults(responseJson){
-    
-    $('#results-container').empty();
-    
-    let resultHtml = `<div>
-    <ul>
-        <li>Positive Cases: ${responseJson["positive"]}</li>
-        <li>Negative Cases: ${responseJson["negative"]}</li>
-        
-        <li>Deaths: ${responseJson["death"]}</li>
-        <li>Currently Hospitalized: ${responseJson["hospitalizedCurrently"]}</li>
-      
-    </ul>
-    
-    </div>`;
-    console.log('displayStateResults ran');
-    $('#results-container').append(resultHtml);
-}
-
 
 
 
@@ -114,7 +97,7 @@ function createUrl(){
                    return response.json();
                 } throw new Error(response.status);
             })
-            .then(responseJson => displayStateResults(responseJson))
+            .then(responseJson => displayResults(responseJson))
             .catch(err => {
                 $('.error-message').show();
                 });
@@ -139,12 +122,14 @@ function handleGetForm(){
         event.preventDefault();
         stateFormHtml();
     })
-    $('#js-global').on('click', event =>{
+    $('#js-compare').on('click', event =>{
         event.preventDefault();
-        globalStats();
+        $('#form-container').empty();
+        compareStats();
     })
     
 }
+
 
 $(handleGetStats());
 $(handleGetForm());
