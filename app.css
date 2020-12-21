@@ -20,23 +20,22 @@ header{
     margin-left: auto;
     margin-right: auto;
     margin-top: 24px;    
-    background-color: wheat;
+    background-color:#172626;
+    color: #C4C4C4;
     }
 #intro{
-    max-width: 700px;
+    max-width: 380px;
     margin-left: auto;
     margin-right: auto;
-    color: #2C442C;
+    background-color: #C0D8D8;   
     }
-
 a:link{color:lightblue }
 a:hover{color:darkmagenta}
 a:visited{color:darkslateblue}
 a:active{color:darkturquoise}
-
-body {    
-    background-color: rgb(44, 68, 44);
-    }
+body{
+    background-color: wheat;
+    } 
 .error-message{
     display:none;
     text-align: center;
@@ -45,7 +44,7 @@ body {
     text-align: center;
     }
 p{
-    color: wheat;
+    color:rgb(44, 68, 44);
     line-height: 24px;
     margin-right: 24px;
     margin-left: 24px;
@@ -62,7 +61,7 @@ p{
     } 
 h2 {
     text-align:center;
-    color: wheat;
+    color:rgb(44, 68, 44);
     }
 #button{
     text-align: center;
@@ -102,6 +101,9 @@ fieldset{
     margin-right: auto;
     margin-left: auto;
     }
+legend{
+    color:rgb(44, 68, 44);
+    }
 #youtube-video {
     display: grid;
     max-width: 800px;
@@ -128,10 +130,6 @@ fieldset{
         margin-left: auto;
         margin-right: auto;
         }
-    h2 {
-        text-align:center;
-        color:rgb(44, 68, 44);
-        }
     label{
         color:black;
         }
@@ -143,9 +141,7 @@ fieldset{
         font-family:Verdana, Geneva, Tahoma, sans-serif;
         color:rgb(44, 68, 44);
         }
-    body{
-        background-color: wheat;
-        }   
+      
     .state-form{
         max-width: 40px;
         }  
