@@ -118,6 +118,9 @@ label{
     margin-top: 24px;    
     background-color: wheat;
     }
+    h2 {
+        text-align:center;
+        color:rgb(44, 68, 44);}
     label{
         color:black;
     }
