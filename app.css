@@ -88,13 +88,13 @@ h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     line-height: 60px;
-    color: wheat;
+    color: rgb(44, 68, 44);
     max-width: 800px;
     margin-right:auto;
     margin-left: auto;
     }
 label{
-    color: wheat;
+    color:rgb(44, 68, 44);
     }
 fieldset{
     max-width: 720px;
