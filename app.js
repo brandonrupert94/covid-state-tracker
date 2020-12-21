@@ -60,7 +60,6 @@ function displayResults(responseJson){
      </ul>
 
     </div>`;
-    console.log('displayResults ran');
     $('#results-container').append(resultHtml);
 };
 //this function creates the url for a fetch command for what state will display results
@@ -110,7 +109,6 @@ function getYoutubeVideos(){
         .catch(err => {
             $('.error-message').show();
         });
-    console.log('getYTVideos ran');
 }
 //This function listens to the user selecting to show state stats or to pull up a list of covid safety youtube videos
 function handleGetForm(){
