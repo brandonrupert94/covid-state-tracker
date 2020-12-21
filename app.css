@@ -39,6 +39,7 @@ body {
     }
 .error-message{
         display:none;
+        text-align: center;
         }
 .centered{
         text-align: center;
