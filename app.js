@@ -6,34 +6,34 @@ const baseUrl= "https://api.covidtracking.com/v1/states/";
 
 function stateFormHtml(){
     
-    let formHtml= `<form id="covid-form">
-    <label for="state">Select a State:</label>
-    <input type="text" id="state" class="state-form" value="" placeholder="IL" maxlength="2" required>
-    <input type="submit" id="state-stats" value="Get stats!">
-</form>
-`;
- $('#form-container').empty();
- $('#results-container').empty();
+    let formHtml= `
+        <form id="covid-form">
+            <label for="state">Select a State:</label>
+            <input type="text" id="state" class="state-form" value="" placeholder="IL" maxlength="2" required>
+            <input type="submit" id="state-stats" value="Get stats!">
+        </form>`;
+    $('#form-container').empty();
+    $('#results-container').empty();
 
- $('#form-container').append(formHtml);
+    $('#form-container').append(formHtml);
 
 }
 //this function is called when the Youtube Covid Safety button submits a fetch request and uses the data to display results
 function displayVideos(responseJson){
- $('#results-container').empty();
-   ;
+    $('#results-container').empty();
+    
+    for (let i=0; i < responseJson['items'].length; i++){
+        let videoUrl= `https://www.youtube.com/watch?v=${responseJson['items'][i]['id']['videoId']}`;
+        let videoDescription= `${responseJson['items'][i]['snippet']['description']}`;
 
-  for (let i=0; i < responseJson['items'].length; i++){
-    let videoUrl= `https://www.youtube.com/watch?v=${responseJson['items'][i]['id']['videoId']}`;
-    let videoDescription= `${responseJson['items'][i]['snippet']['description']}`;
-
-    $('#youtube-video').append(`<div class="video">
-     <h3>${responseJson['items'][i]['snippet']["title"]}</h3>
-        <ol>
-            <li><p>Description: ${videoDescription}</p></li>
-            <li><p>Video Link:<a href="${videoUrl}">${videoUrl}</a></p></li>
-        </ol>
-     </div>`);
+        $('#youtube-video').append(`
+        <div class="video">
+            <h3>${responseJson['items'][i]['snippet']["title"]}</h3>
+                <ol>
+                    <li><p>Description: ${videoDescription}</p></li>
+                    <li><p>Video Link: <a href="${videoUrl}">${videoUrl}</a></p></li>
+                </ol>
+        </div>`);
   };
  
   console.log('ddisplayVideos ran')
@@ -47,13 +47,13 @@ function displayResults(responseJson){
     
     let resultHtml=`<div>
      <ul>
-        <li>Positive Cases: ${responseJson["positive"]}</li>
-        <li>increase from previous day: ${responseJson["positiveIncrease"]}</li>
-        <li>Negative Cases: ${responseJson["negative"]}</li>
+        <li class="results">Positive Cases: ${responseJson["positive"]}</li>
+        <li class="results">increase from previous day: ${responseJson["positiveIncrease"]}</li>
+        <li class="results">Negative Cases: ${responseJson["negative"]}</li>
         
-        <li>Deaths: ${responseJson["death"]}</li>
-        <li>Death increase from previous day: ${responseJson["deathIncrease"]}</li>
-        <li>Currently Hospitalized: ${responseJson["hospitalizedCurrently"]}</li>
+        <li class="results">Deaths: ${responseJson["death"]}</li>
+        <li class="results">Death increase from previous day: ${responseJson["deathIncrease"]}</li>
+        <li class="results">Currently Hospitalized: ${responseJson["hospitalizedCurrently"]}</li>
         
 
      </ul>
@@ -68,8 +68,7 @@ function createUrl(){
     let stateSelected = document.getElementById('state').value;
     let fullUrl= `${baseUrl}${stateSelected}/current.json`;
     fullUrl.toLowerCase();
-    console.log(fullUrl)
-    
+        
         fetch(fullUrl)
             .then(response =>{
                 if (response.ok) {
@@ -118,6 +117,7 @@ function handleGetForm(){
         event.preventDefault();
         $('#youtube-video').empty();
         stateFormHtml();
+        handleGetStats();
     })
     $('#js-youtube').on('click', event =>{
         event.preventDefault();
@@ -128,5 +128,5 @@ function handleGetForm(){
 }
 
 
-$(handleGetStats());
+
 $(handleGetForm());
