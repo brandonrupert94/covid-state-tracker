@@ -21,6 +21,7 @@ function stateFormHtml(){
 //this function is called when the Youtube Covid Safety button submits a fetch request and uses the data to display results
 function displayVideos(responseJson){
     $('#results-container').empty();
+    $('#youtube-video').empty();
     
     for (let i=0; i < responseJson['items'].length; i++){
         let videoUrl= `https://www.youtube.com/watch?v=${responseJson['items'][i]['id']['videoId']}`;
