@@ -1,3 +1,14 @@
+#form-button{
+    display: flex;
+    flex-direction: row;
+    }
+.btn{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+    }
 header{
     text-decoration: underline;
     text-align: center;
@@ -5,105 +16,166 @@ header{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     border: 1px solid teal;
     border-radius: 5px;
-    max-width: 300px;
+    max-width: 520px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 24px;    
     background-color: wheat;
+    }
+#intro{
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+a:link{color:lightblue }
+a:hover{color:darkmagenta}
+a:visited{color:darkslateblue}
+a:active{color:darkturquoise}
+
+body {
+    
+    background-color: rgb(44, 68, 44);
+    }
+.error-message{
+        display:none;
+        }
+.centered{
+        text-align: center;
+        }
+p{
+    color: wheat;
+    line-height: 24px;
+    margin-right: 24px;
+    margin-left: 24px;
 }
+#covid-form{
+    justify-items: center;
+    text-align: center
+    }
+.state-form{
+    max-width: 80px;
+    }
+.state-form{
+    text-transform: lowercase;
+    } 
 h2 {
     text-align:center;
+    color: wheat;
+    }
+#button{
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        
+        }
+#youtube-video{
+    max-width:780px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-p {
+#results-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 60px;
+    color: wheat;
+    max-width: 800px;
+    margin-right:auto;
+    margin-left: auto;
+    }
+label{
+    color: wheat;
+}
+#youtube-video {
+    display: grid;
+    max-width: 800px;
+    margin-right:auto;
+    margin-left: auto;
+}
+@media screen and (max-width: 520px){
+    header{
+    text-decoration: underline;
+    text-align: center;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 1px solid teal;
+    border-radius: 5px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;    
+    background-color: wheat;
+    }
+    label{
+        color:black;
+    }
+    p {
     text-align: left;
     padding-left: 8px;
     padding-right: 8px; 
     font-size: 14px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
+    color:rgb(44, 68, 44);
+    }
 
-body{
+    body{
     background-color: wheat;
-}
-#covid-form{
-    justify-items: center;
-    text-align: center
-}
-.state-form{
-    max-width: 40px;
-}
-.state-form{
-    text-transform: lowercase;
-}
-#button{
+    }
+    .state-form{
+        max-width: 40px;
+        }
+    
+    
+    #button{
     text-align: center;
     display: flex;
     flex-direction: column;
-    max-width: 180px;
+    max-width: 240px;
     margin-left: auto;
     margin-right:auto;
     margin-bottom: 20px;
     margin-top: 20px;
     
-}
-#intro{
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-ul{
-    list-style-type: none;
-}
-input, .btn{
-    margin-bottom: 10px;
-}
-
-#results-container{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-    line-height: 60px;
-}
-.error-message{
-    display:none;
-}
-.centered{
-    text-align: center;
-}
-
-a:link{color:blue };
-a:hover{color:darkmagenta};
-a:visited{color:darkslateblue};
-a:active{color:darkturquoise};
-
-@media screen and (min-width: 800px) {
-   
-    #form-button{
-        display: flex;
-        flex-direction: row;
-    }
-    .btn{
-        display: flex;
-        flex-direction: row;
-    }
-    header{
-        text-decoration: underline;
-        text-align: center;
-        font-size: larger;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        border: 1px solid teal;
-        border-radius: 5px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 24px;    
-        background-color: wheat;
     }
     #intro{
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
     }
+    ul{
+    list-style-type: none;
+    }
+    input, .btn{
+    margin-bottom: 10px;
+    }
+
+    
+    .results {
+    flex: 1;
+    flex-wrap:wrap;
+    color:rgb(44, 68, 44);
+    }
+    .error-message{
+    display:none;
+    }
+    .centered{
+    text-align: center;
+    }
+
+    a:link{color:blue };
+    a:hover{color:darkmagenta};
+    a:visited{color:darkslateblue};
+    a:active{color:darkturquoise};
+
 }
