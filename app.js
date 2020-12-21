@@ -1,4 +1,4 @@
-'use strict'
+
 const apiKey= "AIzaSyDPLbIT5mkBx1vlDjD101H3w4rAv31Cfz4";
 const baseUrl= "https://api.covidtracking.com/v1/states/";
 
