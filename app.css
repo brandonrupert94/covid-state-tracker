@@ -26,7 +26,6 @@ header{
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    
     color: #2C442C;
     }
 
@@ -35,23 +34,22 @@ a:hover{color:darkmagenta}
 a:visited{color:darkslateblue}
 a:active{color:darkturquoise}
 
-body {
-    
+body {    
     background-color: rgb(44, 68, 44);
     }
 .error-message{
-        display:none;
-        text-align: center;
-        }
+    display:none;
+    text-align: center;
+    }
 .centered{
-        text-align: center;
-        }
+    text-align: center;
+    }
 p{
     color: wheat;
     line-height: 24px;
     margin-right: 24px;
     margin-left: 24px;
-}
+        }
 #covid-form{
     justify-items: center;
     text-align: center
@@ -67,23 +65,22 @@ h2 {
     color: wheat;
     }
 #button{
-        text-align: center;
-        display: flex;
-        flex-direction: row;
-        max-width: 380px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        
-        }
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px; 
+    }
 #youtube-video{
     max-width:780px;
     margin-left:auto;
     margin-right:auto;
     padding-left: 20px;
     padding-right: 20px;
-}
+    }
 #results-container{
     display: flex;
     flex-direction: column;
@@ -99,100 +96,92 @@ h2 {
     }
 label{
     color: wheat;
-}
+    }
 fieldset{
     max-width: 720px;
     margin-right: auto;
     margin-left: auto;
-}
+    }
 #youtube-video {
     display: grid;
     max-width: 800px;
     margin-right:auto;
     margin-left: auto;
-}
+    }
 @media screen and (max-width: 520px){
     header{
-    text-decoration: underline;
-    text-align: center;
-    font-size: larger;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border: 1px solid teal;
-    border-radius: 5px;
-    max-width: 380px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 24px;    
-    background-color:#172626;
-    color: #C4C4C4;
-    }
+        text-decoration: underline;
+        text-align: center;
+        font-size: larger;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        border: 1px solid teal;
+        border-radius: 5px;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;    
+        background-color:#172626;
+        color: #C4C4C4;
+        }
     fieldset{
         max-width: 350px;
         margin-left: auto;
         margin-right: auto;
-    }
+        }
     h2 {
         text-align:center;
-        color:rgb(44, 68, 44);}
+        color:rgb(44, 68, 44);
+        }
     label{
         color:black;
-    }
+        }
     p {
-    text-align: left;
-    padding-left: 8px;
-    padding-right: 8px; 
-    font-size: 14px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:rgb(44, 68, 44);
-    }
-
+        text-align: left;
+        padding-left: 8px;
+        padding-right: 8px; 
+        font-size: 14px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        color:rgb(44, 68, 44);
+        }
     body{
-    background-color: wheat;
-    }
+        background-color: wheat;
+        }   
     .state-form{
         max-width: 40px;
-        }
-    
-    
+        }  
     #button{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    max-width: 240px;
-    margin-left: auto;
-    margin-right:auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    
-    }
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 240px;
+        margin-left: auto;
+        margin-right:auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        }
     #intro{
-    max-width: 380px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #C0D8D8;
-    
-    
-    }
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #C0D8D8;   
+        }
     ul{
-    list-style-type: none;
-    }
+        list-style-type: none;
+        }
     input, .btn{
-    margin-bottom: 10px;
-    }
-
-    
+        margin-bottom: 10px;
+        }   
     .results {
-    flex: 1;
-    flex-wrap:wrap;
-    color:rgb(44, 68, 44);
-    }
+        flex: 1;
+        flex-wrap:wrap;
+        color:rgb(44, 68, 44);
+        }
     .error-message{
-    display:none;
-    }
+        display:none;
+        }
     .centered{
-    text-align: center;
-    }
-
+        text-align: center;
+        }
     a:link{color:blue };
     a:hover{color:darkmagenta};
     a:visited{color:darkslateblue};
