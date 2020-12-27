@@ -9,7 +9,7 @@ Webpage [State Covid Tracker](https://brandonrupert94.github.io/covid-state-trac
 
 Screenshot of the app
 ---------------------
-![State Covid Status Checker Screenshot](/images/app-screenshot.png "App Screenshot")
+![State Covid Status Checker Screenshot](/images/covid-status-sc.png "App Screenshot")
 
 
 Summary
