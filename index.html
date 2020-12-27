@@ -15,31 +15,32 @@
     </header>
     
     <main>
-
-        <section id="intro">
-            <h2>Using this webpage:</h2>
-            <p>Hello and Welcome! During this global pandemic and considering how it is affecting everyone's lives, I decided
+        <div id="main-div">
+            <section id="intro">
+                <h2>About this webpage:</h2>
+                <p>Hello and Welcome! During this global pandemic and considering how it is affecting everyone's lives, I decided
                 to make a webpage that can display Covid-19 statistics per state so everyone would be able to view the
-                status of their state in regards to Covid. Simply select the State Statistics button and select your state using
-                your two letter State Code. In addition I provided a button that will display links to Youtube Videos on Covid-19 
-                safety and how you can do your part and stay safe and healthy. 
-            </p>
-        </section>
-        <section id="form-buttons">
-            <h2>Features</h2>
-            <fieldset>
-                <legend>Options</legend>
-            <form id="button">
+                status of their state in regards to Covid. This webpage is intended to get a quick, overview of a State's overall
+                Covid-19 stats. Statistics like Positive cases, an increase in cases from yesterday, deaths, and more are available 
+                here at this webpage. In addition, Resource videos for Covid-19 safety and health tips are available here as well. 
+                </p>
+            </section>
+            <section id="form-buttons">
+                <h2>Features</h2>
+                <fieldset>
+                    <legend>Options</legend>
+                <form id="button">
                 
-                    <input type="button" id="js-state" class="btn" value="State Statistics">
-                    <input type="button" id="js-youtube" class="btn" value="YouTube Covid Safety">
+                        <input type="button" id="js-state" class="btn" value="State Statistics">
+                        <input type="button" id="js-youtube" class="btn" value="YouTube Covid Safety">
                 
-            </form> 
-            <div id="form-container">
+                </form> 
+                    <div id="form-container">
 
+                    </div>
+                </fieldset> 
+            </section>
         </div>
-            </fieldset> 
-        </section>
         
        
         <div class="error-message">Something went wrong. Try making sure your state code is correct. </div>
@@ -51,9 +52,7 @@
         </div>
     </main>
    
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
 </html>

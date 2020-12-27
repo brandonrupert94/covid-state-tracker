@@ -32,7 +32,7 @@ function displayVideos(responseJson){
             <h3>${responseJson['items'][i]['snippet']["title"]}</h3>
                 <ol>
                     <li><p>Description: ${videoDescription}</p></li>
-                    <li><p>Video Link: <a href="${videoUrl}">${videoUrl}</a></p></li>
+                    <li><p>Video Link: <a href="${videoUrl}" target ="_blank">${videoUrl}</a></p></li>
                 </ol>
         </div>`);
   };
