@@ -33,6 +33,7 @@ body{
     background-color: #5cdb95;
     } 
 .error-message{
+    font-size: 28px;
     display:none;
     text-align: center;
     }
